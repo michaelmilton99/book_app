@@ -1,0 +1,52 @@
+<!-- Book Form, used in both "New Book" (new.html.erb) and "Edit" (edit.html.erb) forms -->
+
+<%= form_with(model: @book, local: true) do |form| %>
+
+    <!-- Error checking - all fields must be filled out -->
+    <% if @book.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@book.errors.count, "error") %>
+                prohibited this book from being saved:
+            </h2>
+            <u1>
+                <% @book.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </u1>
+        </div>
+    <% end %>
+
+    <p>
+        <%= form.label :Title %><br>
+        <%= form.text_field :Title %>
+    </p>
+    
+    <p>
+        <%= form.label :Genre %><br>
+        <%= form.select(:Genre,
+                ['Nonfiction', 'Fantasy', 'Horror', 'Adventure', 'Children',
+                'Crime', 'Drama', 'Mystery', 'Science Fiction', 'Romance']) %>
+    </p>
+    
+    <p>
+        <%= form.label :Author %><br>
+        <%= form.text_field :Author %>
+    </p>
+
+    <p>
+        <%= form.label :Price %><br>
+        <%= form.text_field :Price %>
+    </p>
+    
+    <p>
+        <%= form.label :Published %><br>
+        <%= form.date_select(:Published, :order => [:month, :day, :year],
+            start_year: Date.today.year-100, end_year: Date.today.year) %>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+    
+<% end %>

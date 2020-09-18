@@ -1,0 +1,39 @@
+<!-- Specifies the layout of the book index - also the main page -->
+
+<h1>Books Currently In the Library</h1>
+
+<p>
+    <%= flash[:msg] %>
+</p>
+
+<%= link_to 'New Book', new_book_path %>
+
+<!-- List all books in a table, with buttons to act on the books -->
+<!-- Buttons: -->
+<!-- Show - show the selected book's information -->
+<!-- Edit - edit the selected book's information -->
+<!-- Delete - ask for confirmation, then delete the selected book -->
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Published</th>
+        <th></th>
+    </tr>
+    
+    <% @books.each do |book| %>
+        <tr>
+            <td><%= book.Title %></td>
+            <td><%= book.Genre %></td>
+            <td><%= book.Author %></td>
+            <td><%= book.Price %></td>
+            <td><%= book.Published %></td>
+            <td><%= link_to 'Show', book_path(book) %></td>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td><%= link_to 'Delete', book_path(book), method: :delete,
+                    data: {confirm: 'Are you sure you want to delete?'} %> </td>
+        </tr>
+    <% end %>
+</table>

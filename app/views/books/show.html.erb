@@ -1,0 +1,31 @@
+<!-- Specifies the layout of the book's information when the "show" button is pressed -->
+
+<h1>Book Information</h1>
+
+<p>
+    <strong>Title:</strong>
+    <%= @book.Title %>
+</p>
+
+<p>
+    <strong>Genre:</strong>
+    <%= @book.Genre %>
+</p>
+
+<p>
+    <strong>Author:</strong>
+    <%= @book.Author %>
+</p>
+
+<p>
+    <strong>Price:</strong>
+    <%= @book.Price %>
+</p>
+
+<p>
+    <strong>Published:</strong>
+    <%= @book.Published %>
+</p>
+
+<!-- Add a 'Back' link to return to the book index -->
+<%= link_to 'Back', books_path %>

@@ -1,0 +1,9 @@
+<!-- Specifies the book creation form when the "New Book" button is clicked -->
+
+<h1>Create Book</h1>
+
+<!-- Show the form from _form.html.erb -->
+<%= render 'form' %>
+
+<!-- Add a "Cancel" button to go back to the index without creating a book -->
+<%= link_to 'Cancel', books_path %>

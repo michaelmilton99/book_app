@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Title: MyString
+  Genre: MyString
+  Author: MyString
+  Price: 1.5
+  Published: 2020-09-17
+
+two:
+  Title: MyString
+  Genre: MyString
+  Author: MyString
+  Price: 1.5
+  Published: 2020-09-17
